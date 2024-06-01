@@ -35,21 +35,45 @@ Constructify is an e-commerce platform for construction materials. It is a full-
    cd constructify
    ```
 
-3. Install the dependencies:
+3. Install the dependencies using npm and composer, make sure your npm and composer are installed on your computer. If not, you can download it [here](https://nodejs.org/en/download/) and [here](https://getcomposer.org/download/) respectively. Use PHP version 8.2.0 and above.
 
    ```bash
    npm install
    ```
 
+   ```bash
+   composer install
+   ```
+
 4. Create a `.env` file in the root directory (see `.env.example` for reference).
 
-5. Start the server:
+5. Start database server and create a database.
+
+6. Generate an application key:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+7. Migrate the database:
+
+   ```bash
+   php artisan migrate
+   ```
+
+   or
+
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+
+8. Start the server:
 
    ```bash
    npm run dev
    ```
 
-6. Visit link that appears in the terminal to view the application.
+9. Visit link that appears in the terminal to view the application.
 
 ## Technologies Used
 
