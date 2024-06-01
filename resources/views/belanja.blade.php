@@ -29,13 +29,57 @@
         </div>
     </nav>
 
-    <div class="bg-cover w-full h-[350px] overflow-hidden" style="background-image: url('../images/construction.jpg');">
-        <div class="backdrop-brightness-50 w-full min-h-[350px] text-white flex justify-center items-center flex-col">
-            <h1 class="text-[52px] mb-2.5 ">Constructify</h1>
-            <p>Build your dream with us</p>
-            <button type="button" class="btn btn-light my-4">Shop Now!</button>
+    <style>
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            height: 75px;
+            padding: 0 20px
+            position: relative;
+        }
+
+        .header-title {
+            display: flex;
+            color: #4D869C;
+            text-align: center;
+        }
+
+        .search-container {
+            display: flex;
+            position: absolute;
+            right: 20px;
+            width: 300px;
+        }
+
+        .search-container input {
+            display: flex;
+            width: 100%;
+        }
+    </style>
+    <div class="header-container bg-cover w-full h-[75px] overflow-hidden">
+        <div class="header-title flex items-center">
+            <h1 class="text-[24px] font-bold">Shop</h1>
+            <div class="search-container">
+                <label for="Pencarian" class="block text-sm font-medium leading-6 text-gray-900">
+                    <div class="relative mt-2 rounded-md shadow-sm">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                            <span class="text-gray-500 sm:text-sm"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" name="price" id="price" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 
+                        ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 
+                        sm:text-sm sm:leading-6" placeholder="Search">
+                        <div class="absolute inset-y-0 right-0 flex items-center">
+                            <label for="currency" class="sr-only">Currency</label>
+                        </div>
+                    </div>
+                </label>
+            </div>
         </div>
+        
     </div>
+    
 
     <div class="overflow-hidden flex flex-col justify-center items-center mt-5 px-5 py-0">
         <div class="flex justify-center items-center flex-col w-full">
