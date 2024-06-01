@@ -6,8 +6,8 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/belanja', function () {
-    return view('belanja');
+Route::get('/shop', function () {
+    return view('shop');
 });
 
 Route::get('/history', function () {

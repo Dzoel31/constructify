@@ -36,7 +36,7 @@
             align-items: center;
             background-color: white;
             height: 75px;
-            padding: 0 20px
+            padding: 0 20px;
             position: relative;
         }
 
