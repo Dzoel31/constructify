@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('materials', function (Blueprint $table) {
-            $table->uuid('ID_Material')->primary();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('ID_Category')->constrained(
+                table: 'categories',
+                indexName: 'materials_ID_category'
+            );
             $table->string('Name');
             $table->string('Image')->nullable();
             $table->string('Description')->nullable();
             $table->decimal('Price', 12, 2);
             $table->integer('Stock');
-            $table->foreignId('ID_Category')->constrained(
-                table: 'categories',
-                indexName: 'materials_categories_id'
-            )->nullOnDelete();
             $table->timestamps();
         });
     }
