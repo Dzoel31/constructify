@@ -13,3 +13,7 @@ Route::get('/belanja', function () {
 Route::get('/history', function () {
     return view('history');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
