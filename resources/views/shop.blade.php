@@ -25,12 +25,13 @@
         </div>
         <div class="flex items-center mr-5">
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="./user/basket.php"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="./user/login.php"><i class="fa-regular fa-user"></i></a>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/login"><i class="fa-regular fa-user"></i></a>
         </div>
     </nav>
 
     <style>
         .header-container {
+<<<<<<< HEAD:resources/views/shop.blade.php
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,6 +39,9 @@
             height: 75px;
             padding: 0 20px;
             position: relative;
+=======
+            flex justify-center items-center bg-[white] h-[75px] relative px-5 py-0;
+>>>>>>> Login:resources/views/belanja.blade.php
         }
 
         .header-title {
@@ -58,16 +62,16 @@
             width: 100%;
         }
     </style>
-    <div class="header-container bg-cover w-full h-[75px] overflow-hidden">
-        <div class="header-title flex items-center">
+    <div class="flex justify-center items-center bg-[white] h-[75px] relative px-5 py-0">
+        <div class="flex text-[#4D869C] text-center">
             <h1 class="text-[24px] font-bold">Shop</h1>
-            <div class="search-container">
+            <div class="flex absolute w-[300px] right-5">
                 <label for="Pencarian" class="block text-sm font-medium leading-6 text-gray-900">
                     <div class="relative mt-2 rounded-md shadow-sm">
                         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                             <span class="text-gray-500 sm:text-sm"><i class="fas fa-search"></i></span>
                         </div>
-                        <input type="text" name="price" id="price" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 
+                        <input type="text" name="price" id="price" class="flex w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 
                         ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 
                         sm:text-sm sm:leading-6" placeholder="Search">
                         <div class="absolute inset-y-0 right-0 flex items-center">
