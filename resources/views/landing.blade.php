@@ -24,7 +24,7 @@
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/history">History</a>
         </div>
         <div class="flex items-center mr-5">
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="./user/basket.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/troli"><i class="fa-solid fa-cart-shopping"></i></a>
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/login"><i class="fa-regular fa-user"></i></a>
         </div>
     </nav>
@@ -41,11 +41,11 @@
         <div class="flex justify-center items-center flex-col w-full">
             <h2 class="text-3xl font-bold text-[#7AB2B2]">Our Partners</h2>
             <div class="w-full flex justify-center items-center">
-                <img class="w-[200px] p-10" src="../images/nippon-paint.jpg" alt="nippon paint">
-                <img class="w-[200px] p-10" src="../images/panasonic.jpg" alt="panasonic">
-                <img class="w-[200px] p-10" src="../images/sanjimas.jpg" alt="sanjimas">
-                <img class="w-[200px] p-10" src="../images/philips.jpg" alt="philips">
-                <img class="w-[200px] p-10" src="../images/modena.jpg" alt="modena">
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/nippon-paint.jpg" alt="nippon paint"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/panasonic.jpg" alt="panasonic"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/sanjimas.jpg" alt="sanjimas"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/philips.jpg" alt="philips"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/modena.jpg" alt="modena"> </a>
             </div>
         </div>
         <div class="flex justify-center items-center flex-col w-full">

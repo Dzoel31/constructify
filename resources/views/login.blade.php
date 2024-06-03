@@ -20,11 +20,11 @@
         </div>
         <div>
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/">Home</a>
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/belanja">Shop</a>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/shop">Shop</a>
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/history">History</a>
         </div>
         <div class="flex items-center mr-5">
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="./user/basket.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/troli"><i class="fa-solid fa-cart-shopping"></i></a>
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/login"><i class="fa-regular fa-user"></i></a>
         </div>
     </nav>
@@ -68,7 +68,7 @@
       
           <p class="mt-10 text-center text-sm text-gray-500">
             Not a account?
-            <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign in</a>
+            <a href="/signin" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign in</a>
           </p>
         </div>
       </div>
