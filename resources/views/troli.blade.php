@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Constructify</title>
+    @vite('resources/css/app.css')
+</head>
+
+<style> 
+        .cart-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            color: rgb(77, 134, 156);
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-table th {
+            background-color: #e3e3e3;
+            color: rgb(77, 134, 156);
+        }
+
+        .product-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .quantity-input {
+            width: 50px;
+            padding: 5px;
+        }
+
+        .remove-button {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .remove-button:hover {
+            background-color: #ff1a1a;
+        }
+
+        .cart-total {
+            text-align: right;
+        }
+
+        .cart-total h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .checkout-button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-button:hover {
+            background-color: #45a049;
+        }
+</style>
+
+<body class="overflow-x-hidden font-plus-jakarta-sans">
+    <nav class="flex justify-between items-center px-0 py-2.5">
+        <div class="text-[#4D869C] ml-5">
+            <h2 class="font-bold text-xl ">Constructify</h2>
+        </div>
+        <div>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/">Home</a>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/shop">Shop</a>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/history">History</a>
+        </div>
+        <div class="flex items-center mr-5">
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/troli"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/login"><i class="fa-regular fa-user"></i></a>
+        </div>
+    </nav>
+
+    <div class="cart-container">
+        <h1>Keranjang Barang</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Gambar</th>
+                    <th>Nama Barang</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
+                    <th>Total</th>
+                    <th>Hapus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="../images/paku.jpeg" alt="Paku" class="product-image"></td>
+                    <td>Barang 1</td>
+                    <td>Rp 100,000</td>
+                    <td><input type="number" value="1" class="quantity-input"></td>
+                    <td>Rp 100,000</td>
+                    <td><button class="remove-button">Hapus</button></td>
+                </tr>
+                <!-- Tambahkan baris barang lainnya di sini -->
+            </tbody>
+        </table>
+        <div class="cart-total">
+            <h2>Total: Rp 100,000</h2>
+            <button class="checkout-button">Lanjutkan Pembayaran</button>
+        </div>
+    </div>
+
+    
