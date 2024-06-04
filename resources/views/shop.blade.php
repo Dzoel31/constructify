@@ -25,65 +25,30 @@
         </div>
         <div class="flex items-center mr-5">
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="./user/basket.php"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="./user/login.php"><i class="fa-regular fa-user"></i></a>
+            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/login.php"><i class="fa-regular fa-user"></i></a>
         </div>
     </nav>
 
-    <style>
-        .header-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            height: 75px;
-            padding: 0 20px;
-            position: relative;
-        }
-
-        .header-title {
-            display: flex;
-            color: #4D869C;
-            text-align: center;
-        }
-
-        .search-container {
-            display: flex;
-            position: absolute;
-            right: 20px;
-            width: 300px;
-        }
-
-        .search-container input {
-            display: flex;
-            width: 100%;
-        }
-    </style>
-    <div class="header-container bg-cover w-full h-[75px] overflow-hidden">
-        <div class="header-title flex items-center">
-            <h1 class="text-[24px] font-bold">Shop</h1>
-            <div class="search-container">
-                <label for="Pencarian" class="block text-sm font-medium leading-6 text-gray-900">
-                    <div class="relative mt-2 rounded-md shadow-sm">
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                            <span class="text-gray-500 sm:text-sm"><i class="fas fa-search"></i></span>
-                        </div>
-                        <input type="text" name="price" id="price" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 
-                        ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 
-                        sm:text-sm sm:leading-6" placeholder="Search">
-                        <div class="absolute inset-y-0 right-0 flex items-center">
-                            <label for="currency" class="sr-only">Currency</label>
-                        </div>
-                    </div>
-                </label>
-            </div>
+    <div class="flex relative px-5 py-0">
+        <div class="flex text-[#4D869C]">
+            <h1 class="text-[24px] font-bold w-full">Shop</h1>
         </div>
-        
     </div>
-    
+    <div class="flex w-full px-3 justify-center items-center mt-3">
+        <label for="search" class="block text-sm font-medium leading-6 text-gray-900">
+            <div class="relative mt-2 rounded-md shadow-sm">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <span class="text-gray-500 sm:text-sm"><i class="fas fa-search text-[14px]"></i></span>
+                </div>
+                <input type="text" name="search" id="search" class="block w-[600px] rounded-md border-0 py-1.5 px-8  pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4D869C] focus:outline-none
+                sm:text-sm sm:leading-6" placeholder="Search">
+            </div>
+        </label>
+    </div>
+
 
     <div class="overflow-hidden flex flex-col justify-center items-center mt-5 px-5 py-0">
         <div class="flex justify-center items-center flex-col w-full">
-            <h2 class="text-3xl font-bold text-[#7AB2B2]">Our Partners</h2>
             <div class="w-full flex justify-center items-center">
                 <img class="w-[200px] p-10" src="../images/nippon-paint.jpg" alt="nippon paint">
                 <img class="w-[200px] p-10" src="../images/panasonic.jpg" alt="panasonic">
@@ -93,7 +58,6 @@
             </div>
         </div>
         <div class="flex justify-center items-center flex-col w-full">
-            <h2 class="text-3xl font-bold text-[#7AB2B2]">Materials</h2>
             <div class="w-full flex justify-center items-center">
                 <img class="w-[200px] p-10" src="../images/kayu.jpg" alt="Kayu">
                 <img class="w-[200px] p-10" src="../images/paku.jpeg" alt="paku">
@@ -103,7 +67,7 @@
             </div>
         </div>
     </div>
-    <footer class="text-black text-center relative w-full px-0 py-2.5 left-0 bottom-0">
+    <footer class="text-black text-center absolute  w-full px-0 py-2.5 left-0 bottom-0">
         <p class="font-bold">Constructify &copy; 2024 </p>
     </footer>
 </body>
