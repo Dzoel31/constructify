@@ -30,12 +30,10 @@
                 href="/history">History</a>
         </div>
         <div class="flex items-center mr-5">
-<<<<<<< HEAD
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="./user/basket.php"><i class="fa-solid fa-cart-shopping"></i></a>
             <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/login.php"><i class="fa-regular fa-user"></i></a>
         </div>
     </nav>
-
     <div class="flex relative px-5 py-0">
         <div class="flex text-[#4D869C]">
             <h1 class="text-[24px] font-bold w-full">Shop</h1>
@@ -52,69 +50,6 @@
             </div>
         </label>
     </div>
-=======
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]"
-                href="/troli"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]"
-                href="/login"><i class="fa-regular fa-user"></i></a>
-        </div>
-    </nav>
-
-    <style>
-        .header-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            height: 75px;
-            padding: 0 20px;
-            position: relative;
-        }
-
-        .header-title {
-            display: flex;
-            color: #4D869C;
-            text-align: center;
-        }
-
-        .search-container {
-            display: flex;
-            position: absolute;
-            right: 20px;
-            width: 300px;
-        }
-
-        .search-container input {
-            display: flex;
-            width: 100%;
-        }
-    </style>
-    <div class="header-container bg-cover w-full h-[75px] overflow-hidden">
-        <div class="header-title flex items-center">
-            <h1 class="text-[24px] font-bold">Shop</h1>
-            <div class="search-container">
-                <label for="Pencarian" class="block text-sm font-medium leading-6 text-gray-900">
-                    <div class="relative mt-2 rounded-md shadow-sm">
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                            <span class="text-gray-500 sm:text-sm"><i class="fas fa-search"></i></span>
-                        </div>
-                        <input type="text" name="price" id="price"
-                            class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 
-                        ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 
-                        sm:text-sm sm:leading-6"
-                            placeholder="Search">
-                        <div class="absolute inset-y-0 right-0 flex items-center">
-                            <label for="currency" class="sr-only">Currency</label>
-                        </div>
-                    </div>
-                </label>
-            </div>
-        </div>
-
-    </div>
->>>>>>> 88182423c8e812582ffe640df516b3f46238a185
-
-
     <div class="overflow-hidden flex flex-col justify-center items-center mt-5 px-5 py-0">
         <div class="flex justify-center items-center flex-col w-full">
             <div class="w-full flex justify-center items-center">
@@ -135,9 +70,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    <footer class="text-black text-center absolute  w-full px-0 py-2.5 left-0 bottom-0">
-=======
     <div class="flex justify-center items-center flex-col w-full">
         <div class="bg-white">
             <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -259,7 +191,6 @@
         </div>
     </div>
     <footer class="text-black text-center relative w-full px-0 py-2.5 left-0 bottom-0">
->>>>>>> 88182423c8e812582ffe640df516b3f46238a185
         <p class="font-bold">Constructify &copy; 2024 </p>
     </footer>
 </body>
