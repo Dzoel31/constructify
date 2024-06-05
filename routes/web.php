@@ -10,9 +10,9 @@ Route::get('/shop', function () {
     return view('shop');
 });
 
-Route::get('/history', function () {
-    return view('history');
-});
+// Route::get('/history', function () {
+    // return view('history');
+// });
 
 Route::get('/login', function () {
     return view('login');
