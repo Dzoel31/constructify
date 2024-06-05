@@ -120,8 +120,8 @@
                 <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                     <div class="group relative">
                         <div
-                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" 
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/pvc-pipe.jpg" 
                                 alt="Front of men&#039;s Basic Tee in black."
                                 class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                                 <!-- perlu di ubah ini yg img -->
@@ -131,10 +131,277 @@
                                 <h3 class="text-sm text-gray-700">
                                     <a href="#">
                                         <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Baju Kuli
+                                        Pipa pvc Ukuran 3 inci
                                     </a>
                                 </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
+                                <p class="mt-1 text-sm text-gray-500">Warna putih</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 135.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/paku.jpeg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Paku Ukuran 7cm 
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 kilo</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 25.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/kayu.jpg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Kayu kusen ukuran 6x12x4
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 kubik</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 550.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/genteng.jpg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Genteng 10 kaki
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 pcs</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 85.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/semen.jpeg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Semen Bosowa 
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">50 kg</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 52.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/besi_ulir.jpeg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Besi Ulir Ukuran 12
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 pcs</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 20.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/kabel eterna.jpg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Kabel Eterna 2 x 15 kawat 
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 meter</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 10.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/pasir.jpeg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Pasir Halus
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 Kubik</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 560.000</p>
+                        </div>
+                    </div>
+
+                    <!-- belum di ubah dibawah -->
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/aplus.jpg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Aplus Merah/ Aplus Skimcoat 
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">20 kg</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 70.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/batu bata ringan.jpg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Bata Ringan 7.5cm /10cm  
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 Kubik</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 600.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/cat tembok.jpg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Cat Tembok 
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 kg</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 80.000</p>
+                        </div>
+                    </div>
+
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/gergaji.jpg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Gergaji
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 pcs</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">Rp. 45.000</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/palu.jpg" 
+                                alt="Front of men&#039;s Basic Tee in black."
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                                <!-- perlu di ubah ini yg img -->
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Palu
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">1 pcs</p>
                             </div>
                             <p class="text-sm font-medium text-gray-900">Rp. 35.000</p>
                         </div>
@@ -142,8 +409,8 @@
 
                     <div class="group relative">
                         <div
-                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" 
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/kawat bendrat.jpg" 
                                 alt="Front of men&#039;s Basic Tee in black."
                                 class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                                 <!-- perlu di ubah ini yg img -->
@@ -153,19 +420,19 @@
                                 <h3 class="text-sm text-gray-700">
                                     <a href="#">
                                         <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Baju Kuli
+                                        Kawat Bendrat 
                                     </a>
                                 </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
+                                <p class="mt-1 text-sm text-gray-500">1 kg</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-900">Rp. 35.000</p>
+                            <p class="text-sm font-medium text-gray-900">Rp. 20.000</p>
                         </div>
                     </div>
 
                     <div class="group relative">
                         <div
-                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" 
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/triplek.jpg" 
                                 alt="Front of men&#039;s Basic Tee in black."
                                 class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                                 <!-- perlu di ubah ini yg img -->
@@ -175,19 +442,19 @@
                                 <h3 class="text-sm text-gray-700">
                                     <a href="#">
                                         <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Baju Kuli
+                                        Triplek 6mm 122 x 244cm
                                     </a>
                                 </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
+                                <p class="mt-1 text-sm text-gray-500">1 lembar</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-900">Rp. 35.000</p>
+                            <p class="text-sm font-medium text-gray-900">Rp. 82.000</p>
                         </div>
                     </div>
 
                     <div class="group relative">
                         <div
-                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" 
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
+                            <img src="../images/sekrop.jpeg" 
                                 alt="Front of men&#039;s Basic Tee in black."
                                 class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                                 <!-- perlu di ubah ini yg img -->
@@ -197,36 +464,15 @@
                                 <h3 class="text-sm text-gray-700">
                                     <a href="#">
                                         <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Baju Kuli
+                                        Sekrop Pasir
                                     </a>
                                 </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
+                                <p class="mt-1 text-sm text-gray-500">1 pcs</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-900">Rp. 35.000</p>
+                            <p class="text-sm font-medium text-gray-900">Rp. 75.000</p>
                         </div>
                     </div>
 
-                    <div class="group relative">
-                        <div
-                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" 
-                                alt="Front of men&#039;s Basic Tee in black."
-                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                                <!-- perlu di ubah ini yg img -->
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                <h3 class="text-sm text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Baju Kuli
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
-                            </div>
-                            <p class="text-sm font-medium text-gray-900">Rp. 35.000</p>
-                        </div>
-                    </div>
 
                     <!-- More products... -->
                 </div>
