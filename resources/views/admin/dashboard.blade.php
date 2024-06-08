@@ -10,16 +10,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <title>Constructify</title>
+    <title>{{ $title }}</title>
     @vite('resources/css/app.css')
 </head>
 
 <body class="overflow-x-hidden font-plus-jakarta-sans h-full">
-    <x-navbar>
-        <x-slot:menu1>Home</x-slot:menu1>
-        <x-slot:menu2>Shop</x-slot:menu2>
-        <x-slot:menu3>History</x-slot:menu3>
-    </x-navbar>
+    <x-admin-navbar></x-admin-navbar>
 
     <div class="bg-cover w-full h-[350px] overflow-hidden" style="background-image: url('../images/construction.jpg');">
         <div class="backdrop-brightness-50 w-full min-h-[350px] text-white flex justify-center items-center flex-col">

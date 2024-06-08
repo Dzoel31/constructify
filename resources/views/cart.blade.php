@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Constructify</title>
     @vite('resources/css/app.css')
-</head>
-
-<style> 
+    <style>
         .cart-container {
             max-width: 800px;
             margin: 50px auto;
@@ -35,7 +33,8 @@
             margin-bottom: 20px;
         }
 
-        .cart-table th, .cart-table td {
+        .cart-table th,
+        .cart-table td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -96,23 +95,17 @@
         .checkout-button:hover {
             background-color: #45a049;
         }
-</style>
+    </style>
+</head>
+
 
 <body class="overflow-x-hidden font-plus-jakarta-sans">
-    <nav class="flex justify-between items-center px-0 py-2.5">
-        <div class="text-[#4D869C] ml-5">
-            <h2 class="font-bold text-xl ">Constructify</h2>
-        </div>
-        <div>
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/">Home</a>
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/shop">Shop</a>
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/history">History</a>
-        </div>
-        <div class="flex items-center mr-5">
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/troli"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/login"><i class="fa-regular fa-user"></i></a>
-        </div>
-    </nav>
+    <x-navbar>
+        <x-slot:menu1>Home</x-slot:menu1>
+        <x-slot:menu2>Shop</x-slot:menu2>
+        <x-slot:menu3>History</x-slot:menu3>
+    </x-navbar>
+
 
     <div class="cart-container">
         <h1>Keranjang Barang</h1>
@@ -144,5 +137,7 @@
             <button class="checkout-button">Lanjutkan Pembayaran</button>
         </div>
     </div>
+</body>
+<x-footer></x-footer>
 
-    
+</html>

@@ -3,8 +3,15 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
+use App\Models\Material;
+use App\Models\Order;
+use App\Models\Partner;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +20,40 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Create for Admin using UserFactory
+        User::factory(2)->roleAdmin()->create(); 
+        
+        // Create for User using UserFactory
+        User::factory(4)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $categories = [
+            'Material Konstruksi',
+            'Material Kayu',
+            'Perlengkapan Konstruksi',
+            'Bahan Cat',
+            'Bahan Atap',
+        ];
+
+        foreach ($categories as $categoryName) {
+            Category::create([
+                'id' => Str::uuid(),
+                'name' => $categoryName,
+            ]);
+        }
+
+        $partners = [
+            'Klepon Paint',
+            'Panasrisik',
+            'Rotan',
+            'Pilek Led',
+            'Duku',
+        ];
+
+        foreach ($partners as $partnerName) {
+            Partner::create([
+                'id' => Str::uuid(),
+                'name' => $partnerName,
+            ]);
+        }
     }
 }
