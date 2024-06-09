@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +12,6 @@
     <title>Constructify</title>
     @vite('resources/css/app.css')
 </head>
-
 <body class="overflow-x-hidden font-plus-jakarta-sans h-full">
     <x-navbar>
         <x-slot:menu1>Home</x-slot:menu1>
