@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('Name');
+            $table->string('name');
             $table->foreignUuid('ID_Category')->constrained(
                 table: 'categories',
                 indexName: 'materials_ID_category'
@@ -22,10 +22,11 @@ return new class extends Migration
                 table: 'partners',
                 indexName: 'materials_ID_partner'
             );
-            $table->string('Image')->nullable();
-            $table->string('Description')->nullable();
-            $table->decimal('Price', 12, 2);
-            $table->integer('Stock');
+            $table->string('image')->nullable();
+            $table->string('description')->nullable();
+            $table->decimal('price', 12, 2);
+            $table->integer('stock');
+            $table->string('unit');
             $table->timestamps();
         });
     }

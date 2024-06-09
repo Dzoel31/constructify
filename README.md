@@ -5,6 +5,8 @@
 1. **[Project Description](#project-description)**
 2. **[Project Goals](#project-goals)**
 3. **[How to Use](#how-to-use)**
+   - **[Initial Setup](#initial-setup)**
+   - **[Seed Data](#seed-data)**
 4. **[Technologies Used](#technologies-used)**
 5. **[Future Development](#future-development)**
 6. **[Contributors](#contributors)**
@@ -22,6 +24,8 @@ Constructify is an e-commerce platform for construction materials. It is a full-
 - Create an admin panel that allows administrators to manage products, orders, and users.
 
 ## How to Use
+
+### Initial Setup
 
 1. Clone the repository:
 
@@ -74,6 +78,20 @@ Constructify is an e-commerce platform for construction materials. It is a full-
    ```
 
 9. Visit link that appears in the terminal to view the application.
+
+### Seed Data
+
+To seed the database with sample data, run the following command:
+
+   ```bash
+   php artisan db:seed
+   ```
+
+   or
+
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
 
 ## Technologies Used
 

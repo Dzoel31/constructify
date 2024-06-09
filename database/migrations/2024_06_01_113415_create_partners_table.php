@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('Name', 100);
-            $table->string('Image')->nullable();
+            $table->string('name', 100);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

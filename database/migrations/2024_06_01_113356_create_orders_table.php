@@ -17,11 +17,11 @@ return new class extends Migration
                 table: 'users',
                 indexName: 'orders_ID_user'
             )->cascadeOnDelete();
-            $table->dateTime('Order_Date')->useCurrent();
-            $table->enum('Status', ['Pending', 'Processing', 'Delivered', 'Cancelled'])->default('Pending');
-            $table->decimal('Total_Price', 12, 2);
-            $table->string('Address');
-            $table->string('Phone_Number', 15);
+            $table->dateTime('order_date')->useCurrent();
+            $table->enum('status', ['Pending', 'Processing', 'Delivered', 'Cancelled'])->default('Pending');
+            $table->decimal('total_price', 12, 2);
+            $table->string('address');
+            $table->string('phone_number', 15);
             $table->timestamps();
         });
     }

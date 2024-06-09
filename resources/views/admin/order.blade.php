@@ -17,13 +17,6 @@
 <body class="overflow-x-hidden font-plus-jakarta-sans h-full">
     <x-admin-navbar></x-admin-navbar>
 
-    <header class="bg-gray-100 py-5">
-        <div class="container mx-auto px-3 h-5 flex items-center">
-            <h1 class="text-2xl font-bold text-gray-800"> {{ $title }} </h1>
-        </div>
-    </header>
-
-    <x-footer></x-footer>
 </body>
 
 </html>
