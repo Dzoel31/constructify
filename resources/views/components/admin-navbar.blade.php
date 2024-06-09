@@ -8,7 +8,6 @@
         <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/admin/orders">Order</a>
     </div>
     <div class="flex items-center mr-5">
-        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
         <div class="relative ml-3">
             <div>
                 <button type="button" @click="isOpen = !isOpen" class="relative flex max-w-xs items-center rounded-full  text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 hover:text-[#4D869C]" id="user-menu-button" aria-expanded="false" aria-haspopup="true">

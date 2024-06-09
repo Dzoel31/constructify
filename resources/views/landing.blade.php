@@ -13,11 +13,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="overflow-x-hidden font-plus-jakarta-sans h-full">
-    <x-navbar>
-        <x-slot:menu1>Home</x-slot:menu1>
-        <x-slot:menu2>Shop</x-slot:menu2>
-        <x-slot:menu3>History</x-slot:menu3>
-    </x-navbar>
+    <x-navbar></x-navbar>
 
     <div class="bg-cover w-full h-[350px] overflow-hidden" style="background-image: url('../images/construction.jpg');">
         <div class="backdrop-brightness-50 w-full min-h-[350px] text-white flex justify-center items-center flex-col">
