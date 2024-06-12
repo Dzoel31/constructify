@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/history/{idOrder}', [ShopController::class, 'order'])->name('history.order'); // in progress
     Route::get('/cart', [ShopController::class, 'cart'])->name('cart'); // in progress
     Route::delete('/cart/{idProduct}', [ShopController::class, 'removeFromCart'])->name('cart.removeFromCart'); // in progress
+    Route::get('/payment', [ShopController::class, 'payment'])->name('payment');
 });
 
 Route::get('/shop/filter', [ShopController::class, 'filter'])->name('filter');
