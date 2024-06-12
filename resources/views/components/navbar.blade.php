@@ -31,10 +31,13 @@
                 @if ( !$user )
                 <a href="/login" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Login</a>
                 @endif
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="block px-4 py-2 text-sm text-gray-700">
-                    @csrf
-                    <button type="submit" role="menuitem" tabindex="-1" class="w-full text-left">Logout</button>
-                </form>
+        
+                @if (auth()->check())
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="block px-4 py-2 text-sm text-gray-700">
+                        @csrf
+                        <button type="submit" role="menuitem" tabindex="-1" class="w-full text-left">Logout</button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>
