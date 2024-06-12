@@ -46,7 +46,7 @@
                         <div class="mt-4 flex justify-between">
                             <div>
                                 <h3 class="text-sm text-gray-700">
-                                    <a href="#">
+                                    <a href="/shop/{{ $product->name }}">
                                         <span aria-hidden="true" class="absolute inset-0"></span>
                                         {{ $product->name }}
                                     </a>
