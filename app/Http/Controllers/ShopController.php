@@ -35,4 +35,9 @@ class ShopController extends Controller
     {
         return view('payment');
     }
+    
+    public function show()
+    {
+        return view('shop_show');
+    }
 }
