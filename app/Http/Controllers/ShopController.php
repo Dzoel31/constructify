@@ -30,4 +30,9 @@ class ShopController extends Controller
     {
         return view('filter');
     }
+
+    public function payment()
+    {
+        return view('payment');
+    }
 }

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Constructify</title>
     @vite('resources/css/app.css')
 </head>
@@ -38,11 +39,11 @@
     <div class="overflow-hidden flex flex-col justify-center items-center mt-5 px-5 py-0">
         <div class="flex justify-center items-center flex-col w-full">
             <div class="w-full flex justify-center items-center">
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/nippon-paint.jpg" alt="nippon paint"> </a>
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/panasonic.jpg" alt="panasonic"> </a>
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/sanjimas.jpg" alt="sanjimas"> </a>
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/philips.jpg" alt="philips"> </a>
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/modena.jpg" alt="modena"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/kleppon-paint.png" alt="klepon paint"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/panas-risik.png" alt="panas risik"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/rotan.png" alt="rotan"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/pilek-led.png" alt="pilek led"> </a>
+                <a href="/filter"> <img class="w-[200px] p-10" src="../images/duku.png" alt="duku"> </a>
             </div>
         </div>
         <div class="flex justify-center items-center flex-col w-full">
