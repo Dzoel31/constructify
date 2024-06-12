@@ -17,6 +17,8 @@
 <body class="overflow-x-hidden font-plus-jakarta-sans h-full">
     <x-admin-navbar></x-admin-navbar>
 
+    <x-footer class="absolute" style="bottom:0"></x-footer>
+
 </body>
 
 </html>

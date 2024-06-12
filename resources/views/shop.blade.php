@@ -15,11 +15,7 @@
 </head>
 
 <body class="overflow-x-hidden font-plus-jakarta-sans">
-    <x-navbar>
-        <x-slot name="menu1">Home</x-slot>
-        <x-slot name="menu2">Shop</x-slot>
-        <x-slot name="menu3">History</x-slot>
-    </x-navbar>
+    <x-navbar></x-navbar>
     <div class="flex relative px-5 py-0">
         <div class="flex text-[#4D869C]">
             <h1 class="text-[24px] font-bold w-full"> {{ $title }} </h1>
@@ -35,26 +31,6 @@
                 sm:text-sm sm:leading-6" placeholder="Search">
             </div>
         </label>
-    </div>
-    <div class="overflow-hidden flex flex-col justify-center items-center mt-5 px-5 py-0">
-        <div class="flex justify-center items-center flex-col w-full">
-            <div class="w-full flex justify-center items-center">
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/kleppon-paint.png" alt="klepon paint"> </a>
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/panas-risik.png" alt="panas risik"> </a>
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/rotan.png" alt="rotan"> </a>
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/pilek-led.png" alt="pilek led"> </a>
-                <a href="/filter"> <img class="w-[200px] p-10" src="../images/duku.png" alt="duku"> </a>
-            </div>
-        </div>
-        <div class="flex justify-center items-center flex-col w-full">
-            <div class="w-full flex justify-center items-center">
-                <img class="w-[200px] p-10" src="../images/kayu.jpg" alt="Kayu">
-                <img class="w-[200px] p-10" src="../images/paku.jpeg" alt="paku">
-                <img class="w-[200px] p-10" src="../images/toilet_seat.jpeg" alt="toilet">
-                <img class="w-[200px] p-10" src="../images/metal_bars.jpeg" alt="besi">
-                <img class="w-[200px] p-10" src="../images/pvc-pipe.jpg" alt="pipa">
-            </div>
-        </div>
     </div>
 
     <div class="flex justify-center items-center flex-col w-full">

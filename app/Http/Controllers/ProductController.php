@@ -93,6 +93,13 @@ class ProductController extends Controller
 
     public function destroy($idProduct)
     {
+        // remove product image
+        $data = Material::find($idProduct);
+        $image_path = public_path('images') . '/' . $data->image;
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+
         Material::destroy($idProduct);
 
         return redirect()->route('admin.products')->with('success', 'Product has been deleted successfully!');

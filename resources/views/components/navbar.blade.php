@@ -3,9 +3,9 @@
         <a class="font-bold text-xl no-underline hover:text-[#4D869C]" href="/">Constructify</a>
     </div>
     <div>
-        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/">{{ $menu1 }}</a>
-        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/{{ Str::lower($menu2) }}">{{ $menu2 }}</a>
-        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/{{ Str::lower($menu3) }}">{{ $menu3 }}</a>
+        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/">Home</a>
+        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/shop">Shop</a>
+        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/history">History</a>
     </div>
     <div class="flex items-center mr-5">
         <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>

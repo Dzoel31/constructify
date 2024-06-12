@@ -37,8 +37,6 @@ class RegisterController extends Controller
             'password' => $validatedData['password'],
         ]);
 
-        $request->session()->flash('success', 'Registration successful.');
-
-        return redirect('/login');
+        return redirect()->route('login')->with('success', 'Register success! Please login.');
     }
 }
