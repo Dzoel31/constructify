@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->foreignUuid('ID_Category')->constrained(
                 table: 'categories',
                 indexName: 'materials_ID_category'

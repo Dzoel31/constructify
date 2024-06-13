@@ -14,19 +14,19 @@ Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('store');
 
-Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
-Route::get('/shop/{idProduct}', [ShopController::class, 'show'])->name('shop.show'); // in progress
+Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
 
 Route::group(['middleware' => 'auth'], function () { 
-    Route::post('/shop/{idProduct}', [ShopController::class, 'addToCart'])->name('shop.addToCart'); // in progress
+    Route::post('/shop/{idProduct}', [ShopController::class, 'addToCart'])->name('shop.addToCart');
     Route::get('/history', [ShopController::class, 'history'])->name('history');
     Route::get('/history/{idOrder}', [ShopController::class, 'order'])->name('history.order'); // in progress
     Route::get('/cart', [ShopController::class, 'cart'])->name('cart'); // in progress
-    Route::delete('/cart/{idProduct}', [ShopController::class, 'removeFromCart'])->name('cart.removeFromCart'); // in progress
+    Route::delete('/cart/{idCart}', [ShopController::class, 'removeFromCart'])->name('cart.removeFromCart'); // in progress
     Route::get('/payment', [ShopController::class, 'payment'])->name('payment');
 });
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Material extends Model
 {
@@ -21,6 +22,11 @@ class Material extends Model
     public function partner(): BelongsTo
     {
         return $this->belongsTo(Partner::class, 'ID_Partner', 'id');
+    }
+
+    public function carts(): HasMany
+    {
+        return $this->hasMany(Cart::class, 'ID_Material', 'id');
     }
 
     public function getRouteKeyName()

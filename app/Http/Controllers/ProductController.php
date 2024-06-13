@@ -40,6 +40,7 @@ class ProductController extends Controller
         Material::create([
             'id' => $data['id'],
             'name' => $data['name'],
+            'slug' => Str::slug($data['name']),
             'ID_category' => $data['ID_category'],
             'ID_partner' => $data['ID_partner'],
             'image' => $data['image'],

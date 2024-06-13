@@ -14,6 +14,12 @@
     @vite('resources/css/app.css')
 </head>
 
+@if(session('success'))
+<div class="bg-green-500 text-white px-3 py-1 text-center">
+    {{ session('success') }}
+</div>
+@endif
+
 <body class="overflow-x-hidden font-plus-jakarta-sans">
     <x-navbar></x-navbar>
     <div class="flex relative px-5 py-0">
@@ -41,12 +47,12 @@
                     @foreach($data as $product)
                     <div class="group relative">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
-                            <img src="../images/{{ $product->image }}" alt=" {{ $product->name }}" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="../images/{{ $product->image }}" alt=" {{ $product->name }}" class="h-full w-full lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex justify-between">
                             <div>
                                 <h3 class="text-sm text-gray-700">
-                                    <a href="/shop/{{ $product->name }}">
+                                    <a href="/shop/{{ $product->slug }}">
                                         <span aria-hidden="true" class="absolute inset-0"></span>
                                         {{ $product->name }}
                                     </a>
