@@ -21,6 +21,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/shop/search', [ShopController::class, 'search'])->name('shop.search');
 Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
 
 Route::group(['middleware' => 'auth'], function () { 

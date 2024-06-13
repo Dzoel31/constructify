@@ -15,41 +15,16 @@
 </head>
 
 <body class="overflow-x-hidden font-plus-jakarta-sans overflow-y-hidden">
-    <x-navbar>
-        <x-slot name="menu1">Home</x-slot>
-        <x-slot name="menu2">Shop</x-slot>
-        <x-slot name="menu3">History</x-slot>
-    </x-navbar>
-
-    <!-- <div class="flex items-center justify-center min-h-screen">
-        <div class="group relative">
-            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-40">
-                <img src="../images/{{ $product->image }}" alt="{{ $product->name }}" class="object-cover h-full w-full">
-            </div>
-            <div class="mt-4 flex flex-col items-center">
-                <h3 class="text-sm text-gray-700">
-                    <a href="/shop/{{ $product->slug }}">
-                        <span aria-hidden="true" class="absolute inset-0"></span>
-                        {{ $product->name }}
-                    </a>
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">{{ $product->unit }}</p>
-                <p class="mt-1 text-sm text-gray-500">{{ $product->description }}</p>
-                <p class="text-sm font-medium text-gray-900">Rp. {{ $product->price }}</p>
-            </div>
-        </div>
-    </div> -->
+    <x-navbar></x-navbar>
 
     <div class="flex items-center justify-center min-h-screen">
         <div class="max-w-5xl w-full p-4 bg-white shadow-md rounded-md">
             <div class="flex flex-col lg:flex-row items-start lg:items-center">
-                <!-- Image Column -->
                 <div class="lg:w-2/3  w-full flex justify-center lg:justify-start lg:mb-0">
                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 ">
                         <img src="../images/{{ $product->image }}" alt="{{ $product->name }}" class="object-cover h-full w-full">
                     </div>
                 </div>
-                <!-- Details Column -->
                 <div class="lg:w-2/3  w-full flex justify-center flex-col ml-3 lg:justify-start lg:mb-0">
                     <h3 class="text-lg font-bold text-gray-700">
                         <a href="/shop/{{ $product->slug }}">
@@ -59,7 +34,7 @@
                     <p class="mt-2 text-sm text-gray-500">{{ $product->description }}</p>
                     <p class="mt-2 text-sm text-gray-500">Unit: {{ $product->unit }}</p>
                     <p class="mt-2 text-sm text-gray-500">Stock: {{ $product->stock }}</p>
-                    <p class="mt-2 text-lg font-semibold text-gray-900">Rp. {{ $product->price }}</p>
+                    <p class="mt-2 text-lg font-semibold text-gray-900">Rp. {{ number_format($product->price) }}</p>
                     <div class="mt-4">
                         <form action="{{ route('shop.addToCart', $product->id) }}" method="POST">
                             @csrf

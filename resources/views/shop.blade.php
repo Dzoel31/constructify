@@ -28,15 +28,16 @@
         </div>
     </div>
     <div class="flex w-full px-3 justify-center items-center mt-3">
-        <label for="search" class="block text-sm font-medium leading-6 text-gray-900">
-            <div class="relative mt-2 rounded-md shadow-sm">
-                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                    <span class="text-gray-500 sm:text-sm"><i class="fas fa-search text-[14px]"></i></span>
+        <form  id='search-form' action="{{ route('shop.search') }}" method="GET">
+            <label for="search" class="block text-sm font-medium leading-6 text-gray-900">
+                <div class="relative mt-2 rounded-md shadow-sm">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                        <span class="text-gray-500 sm:text-sm"><i class="fas fa-search text-[14px]"></i></span>
+                    </div>
+                    <input type="text" name="search" id="search" class="block w-[600px] rounded-md border-0 py-1.5 px-8  pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4D869C] focus:outline-none sm:text-sm sm:leading-6" placeholder="Search" onkeydown="if (event.keyCode === 13) { event.preventDefault(); document.getElementById('search-form').submit(); }">
                 </div>
-                <input type="text" name="search" id="search" class="block w-[600px] rounded-md border-0 py-1.5 px-8  pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4D869C] focus:outline-none
-                sm:text-sm sm:leading-6" placeholder="Search">
-            </div>
-        </label>
+            </label>
+        </form>
     </div>
 
     <div class="flex justify-center items-center flex-col w-full">
@@ -60,7 +61,7 @@
                                 <p class="mt-1 text-sm text-gray-500">{{ $product->unit }}</p>
                                 <p class="mt-1 text-sm text-gray-500">{{ $product->description }}</p>
                             </div>
-                            <p class="text-sm font-medium text-gray-900">Rp. {{ $product->price }}</p>
+                            <p class="text-sm font-medium text-gray-900">Rp. {{ number_format($product->price) }}</p>
                         </div>
                     </div>
                     @endforeach

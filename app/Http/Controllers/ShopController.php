@@ -81,6 +81,16 @@ class ShopController extends Controller
 
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        // search by name
+        $data = Material::where('name', 'like', '%' . $search . '%')->get();
+        return view('shop', [
+            'title' => 'Shop',
+            'data' => $data,
+        ]);
+    }
 
     public function filter()
     {
