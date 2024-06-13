@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'Admin@constructify.com',
             'role' => 'admin',
             'phone_number' => '081234567890',
+            'address' => 'Jl. Admin No. 1',
             'password' => bcrypt('admin123'),
         ]);
         

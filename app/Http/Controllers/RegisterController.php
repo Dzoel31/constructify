@@ -26,14 +26,20 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8'],
         ]);
 
+        if ($validatedData['password'] !== $request->password_confirmation) {
+            return back()->with('error', 'Password confirmation does not match.');
+        }
+
         $validatedData['id'] = Str::uuid();
         $validatedData['password'] = Hash::make($validatedData['password']);
+
 
         User::create([
             'id' => $validatedData['id'],
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'phone_number' => $validatedData['phone_number'],
+            'address' => $request->address,
             'password' => $validatedData['password'],
         ]);
 
