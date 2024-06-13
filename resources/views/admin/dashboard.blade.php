@@ -23,6 +23,110 @@
         </div>
     </header>
 
+    <div class="containter-fluid w-full my-4 mx-4">
+        <div class="row justify-center flex items-center">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    Earnings</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. {{ number_format($Total_Revenue) }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Total Order</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $Total_Order }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa-solid fa-cart-shopping fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                    Pending Status</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $Total_Pending }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa-solid fa-clock-rotate-left fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row flex justify-center items-center">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-green-500 text-uppercase mb-1">
+                                    Processing</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $Total_Processing }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa-solid fa-truck-fast fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Delivered</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $Total_Delivered }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa-regular fa-circle-check fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-red-600  text-uppercase mb-1">
+                                    Canceled</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $Total_Canceled }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa-solid fa-ban fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <x-footer></x-footer>
 </body>
 
