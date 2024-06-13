@@ -12,21 +12,29 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->foreignUuid('ID_User')->constrained(
                 table: 'users',
                 indexName: 'orders_ID_user'
             )->cascadeOnUpdate();
-            $table->foreignUuid('ID_Cart')->constrained(
-                table: 'carts',
-                indexName: 'orders_ID_cart'
-            )->cascadeOnUpdate();
             $table->dateTime('order_date')->useCurrent();
-            $table->enum('status', ['Pending', 'Processing', 'Delivered', 'Cancelled'])->default('Pending');
+            $table->enum('status', ['Pending', 'Processing', 'Delivered', 'Canceled'])->default('Processing');
             $table->decimal('total_price', 12, 2);
-            $table->string('address');
-            $table->string('phone_number', 20);
             $table->timestamps();
+        });
+
+        Schema::create('order_details', function (Blueprint $table) {
+            $table->foreignUuid('ID_Order')->constrained(
+                table: 'orders',
+                indexName: 'order_detail_ID_order'
+            )->cascadeOnUpdate();
+            $table->foreignUuid('ID_Material')->constrained(
+                table: 'materials',
+                indexName: 'order_detail_ID_material'
+            )->cascadeOnUpdate();
+            $table->integer('quantity');
+            $table->decimal('total', 12, 2);
+            $table->primary(['ID_Order', 'ID_Material']);
         });
     }
 
@@ -36,5 +44,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('orders');
+        Schema::dropIfExists('order_details');
     }
 };

@@ -26,7 +26,7 @@ Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
 Route::group(['middleware' => 'auth'], function () { 
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     Route::post('/shop/{idProduct}', [ShopController::class, 'addToCart'])->name('shop.addToCart');
-    Route::get('/history', [ShopController::class, 'history'])->name('history'); // in progress
+    Route::get('/history', [ShopController::class, 'history'])->name('history');
     Route::get('/history/{idOrder}', [ShopController::class, 'order'])->name('history.order'); // in progress
     Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
     Route::delete('/cart/{idCart}', [ShopController::class, 'removeFromCart'])->name('cart.removeFromCart');
@@ -44,9 +44,10 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::put('/admin/products/{idProduct}', [ProductController::class, 'update'])->name('admin.products.update');
     Route::delete('/admin/products/{idProduct}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
     
-    Route::get('/admin/orders', [OrderController::class, 'orders'])->name('admin.orders'); // in progress
+    Route::get('/admin/orders', [OrderController::class, 'orders'])->name('admin.orders');
     Route::get('/admin/orders/{idOrder}', [OrderController::class, 'order'])->name('admin.order'); // in progress
-    Route::put('/admin/orders/{idOrder}', [OrderController::class, 'updateOrder'])->name('admin.order.update'); // in progress
+    Route::put('/order/updateStatus/{idOrder}', [OrderController::class, 'updateStatus'])->name('order.updateStatus');
+
     
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 });

@@ -14,6 +14,10 @@ class Order extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'cart' => 'array',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'ID_User', 'id');
@@ -22,5 +26,10 @@ class Order extends Model
     public function cart(): BelongsTo
     {
         return $this->belongsTo(Cart::class, 'ID_Cart', 'id');
+    }
+
+    public function orderDetail(): HasMany
+    {
+        return $this->hasMany(OrderDetail::class, 'ID_Order', 'id');
     }
 }

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Material;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\OrderDetail;
 
 class ShopController extends Controller
 {
@@ -66,12 +68,17 @@ class ShopController extends Controller
 
     public function history()
     {
-        $history = Order::where('ID_User', auth()->user()->id)->get();
+        $ID_User = auth()->user()->id;
+
+        $All_ID_Order = Order::where('ID_User', $ID_User)->get('id');
+
+        $Detail_Order = OrderDetail::whereIn('ID_Order', $All_ID_Order)->get();
+
         return view('history', [
-            'title' => 'Order History',
-            'history' => $history,
+            'title' => 'History',
+            'detailOrders' => $Detail_Order,
         ]);
-        return view('history');
+
     }
 
 
@@ -98,22 +105,32 @@ class ShopController extends Controller
         ]);
         
         $id_order = Str::uuid();
+        $ID_user = $user->id;
 
-        $cartData = Cart::where('ID_User', auth()->user()->id)->get();
-        foreach ($cartData as $cart) {
-            Order::create([
-                'id' => $id_order,
-                'ID_User' => $user->id,
-                'ID_Cart' => $cart->id,
-                'order_date' => now(),
-                'status' => 'Processing',
-                'total_price' => $data['total'],
-                'address' => $user->address,
-                'phone_number' => $user->phone_number,
-            ]);
+        Order::create([
+            'id' => $id_order,
+            'ID_User' => $ID_user,
+            'total_price' => $data['total'],
+        ]);
+
+        $data_Checkout = Cart::where('ID_User', $ID_user)->get();
+
+        $orderDetails = [];
+        foreach ($data_Checkout as $cart) {
+            $orderDetails[] = [
+                'ID_Order' => $id_order,
+                'ID_Material' => $cart->ID_Material,
+                'quantity' => $cart->quantity,
+                'total' => $cart->total,
+            ];
+
+
 
             Material::where('id', $cart->ID_Material)->decrement('stock', $cart->quantity);
+            Cart::where('id', $cart->id)->delete();
         }
+
+        DB::table('order_details')->insert($orderDetails);
 
         return redirect()->route('shop')->with('success', 'Payment has been processed!');
     }

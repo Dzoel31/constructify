@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Partner;
 use Illuminate\Http\Request;
 
@@ -10,18 +11,30 @@ class OrderController extends Controller
 {
     public function orders()
     {
+        $orderData = Order::all();
+        $ID_Order = Order::pluck('id');
+
+    
         return view('admin.order', [
-            'title' => 'Orders',
+            'title' => 'Order',
+            'orderData' => $orderData,
+            'ID_Order' => $ID_Order,
         ]);
     }
 
     public function order($idOrder)
     {
-        // show order
     }
 
-    public function updateOrder($idOrder)
+    public function updateStatus(Request $request, $ID_Order)
     {
-        // update order
+        $order = Order::where('id', $ID_Order)->first();
+        $status = $request->status;
+
+        $order->update([
+            'status' => $status,
+        ]);
+
+        return back()->with('success', 'Order status updated successfully.');
     }
 }
