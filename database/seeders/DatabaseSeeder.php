@@ -21,7 +21,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Create for Admin using UserFactory
-        User::factory(2)->roleAdmin()->create(); 
+        User::create([
+            'id' => Str::uuid(),
+            'name' => 'Admin',
+            'email' => 'Admin@constructify.com',
+            'role' => 'admin',
+            'phone_number' => '081234567890',
+            'password' => bcrypt('admin123'),
+        ]);
         
         // Create for User using UserFactory
         User::factory(4)->create();

@@ -12,16 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id');
             $table->foreignUuid('ID_User')->constrained(
                 table: 'users',
                 indexName: 'orders_ID_user'
-            )->cascadeOnDelete();
+            )->cascadeOnUpdate();
+            $table->foreignUuid('ID_Cart')->constrained(
+                table: 'carts',
+                indexName: 'orders_ID_cart'
+            )->cascadeOnUpdate();
             $table->dateTime('order_date')->useCurrent();
             $table->enum('status', ['Pending', 'Processing', 'Delivered', 'Cancelled'])->default('Pending');
             $table->decimal('total_price', 12, 2);
             $table->string('address');
-            $table->string('phone_number', 15);
+            $table->string('phone_number', 20);
             $table->timestamps();
         });
     }

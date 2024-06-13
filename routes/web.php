@@ -9,6 +9,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
@@ -18,16 +19,19 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
 
 Route::group(['middleware' => 'auth'], function () { 
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     Route::post('/shop/{idProduct}', [ShopController::class, 'addToCart'])->name('shop.addToCart');
-    Route::get('/history', [ShopController::class, 'history'])->name('history');
+    Route::get('/history', [ShopController::class, 'history'])->name('history'); // in progress
     Route::get('/history/{idOrder}', [ShopController::class, 'order'])->name('history.order'); // in progress
-    Route::get('/cart', [ShopController::class, 'cart'])->name('cart'); // in progress
-    Route::delete('/cart/{idCart}', [ShopController::class, 'removeFromCart'])->name('cart.removeFromCart'); // in progress
+    Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
+    Route::delete('/cart/{idCart}', [ShopController::class, 'removeFromCart'])->name('cart.removeFromCart');
     Route::get('/payment', [ShopController::class, 'payment'])->name('payment');
+    Route::post('/payment', [ShopController::class, 'storePayment'])->name('payment.store');
 });
 
 Route::get('/shop/filter', [ShopController::class, 'filter'])->name('filter');
@@ -35,11 +39,10 @@ Route::get('/shop/filter', [ShopController::class, 'filter'])->name('filter');
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/products', [ProductController::class, 'products'])->name('admin.products');
     Route::post('/admin/products/create', [ProductController::class, 'store'])->name('admin.products.store');
-    Route::get('/admin/products/{idProduct}', [ProductController::class, 'show'])->name('admin.products.show'); // in progress (to show a product)
     
-    Route::get('/admin/products/{idProduct}/edit', [ProductController::class, 'edit'])->name('admin.products.edit'); // in progress
-    Route::put('/admin/products/{idProduct}', [ProductController::class, 'update'])->name('admin.products.update'); // in progress
-    Route::delete('/admin/products/{idProduct}', [ProductController::class, 'destroy'])->name('admin.products.destroy'); // in progress
+    Route::get('/admin/products/{idProduct}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+    Route::put('/admin/products/{idProduct}', [ProductController::class, 'update'])->name('admin.products.update');
+    Route::delete('/admin/products/{idProduct}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
     
     Route::get('/admin/orders', [OrderController::class, 'orders'])->name('admin.orders'); // in progress
     Route::get('/admin/orders/{idOrder}', [OrderController::class, 'order'])->name('admin.order'); // in progress

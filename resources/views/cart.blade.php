@@ -24,66 +24,43 @@
     <x-navbar></x-navbar>
     <div class="max-w-[800px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.1)] mx-auto p-5 rounded-lg">
         <h1>Keranjang Anda</h1>
-        <table class="w-full mb-5 border-collapse">
-            <thead>
-                <tr>
-                    <th class="text-left p-3 border-b[#ddd] border-b border-solid bg-[#e3e3e3] text-[rgb(77,134,156)">Gambar</th>
-                    <th class="text-left p-3 border-b[#ddd] border-b border-solid bg-[#e3e3e3] text-[rgb(77,134,156)">Nama Barang</th>
-                    <th class="text-left p-3 border-b[#ddd] border-b border-solid bg-[#e3e3e3] text-[rgb(77,134,156)">Harga</th>
-                    <th class="text-left p-3 border-b[#ddd] border-b border-solid bg-[#e3e3e3] text-[rgb(77,134,156)">Jumlah</th>
-                    <th class="text-left p-3 border-b[#ddd] border-b border-solid bg-[#e3e3e3] text-[rgb(77,134,156)">Total</th>
-                    <th class="text-left p-3 border-b[#ddd] border-b border-solid bg-[#e3e3e3] text-[rgb(77,134,156)">Hapus</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items">
-                @foreach ($cartData as $cartItem)
-                <tr>
-                    <td class="text-left p-3 border-b-[#ddd] border-b border-solid"><img src="../images/{{ $cartItem->material->image }}" alt="{{ $cartItem->material->name }}" class="w-[50px] h-[50px] object-cover rounded"></td>
-                    <td class="text-left p-3 border-b-[#ddd] border-b border-solid">{{ $cartItem->material->name }}</td>
-                    <td class="text-left p-3 border-b-[#ddd] border-b border-solid">Rp {{ number_format($cartItem->material->price) }}</td>
-                    <td class="text-left p-3 border-b-[#ddd] border-b border-solid"><input type="number" value="{{ $cartItem->quantity }}" class="w-12 p-1"></td>
-                    <td class="text-left p-3 border-b-[#ddd] border-b border-solid">Rp {{ number_format($cartItem->total) }}</td>
-                    <td class="text-left p-3 border-b-[#ddd] border-b border-solid">
-                        <form action="{{ route('cart.removeFromCart', $cartItem->id) }}" method="POST">
+        <ul role="list" class="divide-y divide-gray-100">
+            @foreach ($cartData as $cartItem)
+            <li class="flex justify-between gap-x-6 py-5">
+                <div class="flex min-w-0 gap-x-4">
+                    <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="../images/{{ $cartItem->material->image }}" alt="{{ $cartItem->material->name }}">
+                    <div class="min-w-0 flex-auto">
+                        <p class="text-sm font-semibold leading-6 text-gray-900">{{ $cartItem->material->name }}</p>
+                        <p class="mt-1 truncate text-xs leading-5 text-gray-500">Qty : {{ $cartItem->quantity }}</p>
+                    </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                    <p class="text-sm leading-6 text-gray-900">Rp {{ number_format($cartItem->total) }}</p>
+                    <div class="flex space-x-4">
+                        <a href="{{ route('cart.removeFromCart', $cartItem->id) }}" class="text-red-500 hover:text-red-700" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $cartItem->id }}').submit();">
+                            Remove
+                        </a>
+
+                        <a href="#" class="text-green-500 hover:text-green-700">Buy Now</a>
+
+                        <form id="delete-form-{{ $cartItem->id }}" action="{{ route('cart.removeFromCart', $cartItem->id) }}" method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')
-                            <button class="remove-button bg-[#ff4d4d] text-white cursor-pointer rounded transition-[background-color] duration-[0.3s] ease-[ease] px-3 py-2 border-[none] hover:bg-[#ff1a1a]">Hapus</button>
                         </form>
-                    </td>
-                </tr>
-                @endforeach
-                <!-- Tambahkan baris barang lainnya di sini -->
-            </tbody>
-        </table>
+                    </div>
+                </div>
+            </li>
+            @endforeach
+        </ul>
+
         <div class="text-right">
-            <h2 class="text-2xl text-[#333] m-0">Total: Rp {{ number_format($total) }}</h2>
-            <button class="bg-[#4CAF50] text-white cursor-pointer rounded text-base transition-[background-color] duration-[0.3s] ease-[ease] px-5 py-3 border-[none] hover:bg-[#45a049]">Lanjutkan Pembayaran</button>
+            <h2 class="text-xl text-[#2e2222] m-0">Total: Rp {{ number_format($total) }}</h2>
+            <form action="{{ route('payment') }}" method="GET">
+                @csrf
+                <button class="bg-[#4CAF50] text-white cursor-pointer rounded text-base transition-[background-color] duration-[0.3s] ease-[ease] px-2 py-2 border-[none] hover:bg-[#45a049]">Lanjutkan Pembayaran</button>
+            </form>
         </div>
     </div>
-
-    <script>
-        document.getElementById('checkout-button').addEventListener('click', function() {
-            window.location.href = '/payment';
-        });
-
-        document.querySelectorAll('.remove-button').forEach(function(button) {
-            button.addEventListener('click', function() {
-                const row = this.closest('tr');
-                row.remove();
-                updateTotal();
-            });
-        });
-
-        function updateTotal() {
-            let total = 0;
-            document.querySelectorAll('.cart-table tbody tr').forEach(function(row) {
-                const price = parseFloat(row.cells[2].innerText.replace('Rp ', '').replace(',', ''));
-                const quantity = parseInt(row.cells[3].querySelector('input').value);
-                total += price * quantity;
-            });
-            document.getElementById('total-amount').innerText = 'Total: Rp ' + total.toLocaleString();
-        }
-    </script>
 </body>
 <x-footer></x-footer>
 

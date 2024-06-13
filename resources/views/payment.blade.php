@@ -13,12 +13,37 @@
     <title>Constructify</title>
     @vite('resources/css/app.css')
 </head>
+
 <body>
-    <x-navbar>
-        <x-slot:menu1>Home</x-slot:menu1>
-        <x-slot:menu2>Shop</x-slot:menu2>
-        <x-slot:menu3>History</x-slot:menu3>
-    </x-navbar>
+    <x-navbar></x-navbar>
+    <div class="max-w-[800px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.1)] mx-auto p-5 rounded-lg">
+        <h1>Keranjang Anda</h1>
+        <ul role="list" class="divide-y divide-gray-100">
+            @foreach ($userCart as $cartItem)
+            <li class="flex justify-between gap-x-6 py-5">
+                <div class="flex min-w-0 gap-x-4">
+                    <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="../images/{{ $cartItem->material->image }}" alt="{{ $cartItem->material->name }}">
+                    <div class="min-w-0 flex-auto">
+                        <p class="text-sm font-semibold leading-6 text-gray-900">{{ $cartItem->material->name }}</p>
+                        <p class="mt-1 truncate text-xs leading-5 text-gray-500">Qty : {{ $cartItem->quantity }}</p>
+                    </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                    <p class="text-sm leading-6 text-gray-900">Rp {{ number_format($cartItem->total) }}</p>
+                </div>
+            </li>
+            @endforeach
+        </ul>
+        <div class="text-center">
+            <h2 class="text-xl text-[#2e2222] m-0">Total: Rp {{ number_format($total) }}</h2>
+            <form action="{{ route('payment.store') }}" method="POST">
+                @csrf
+                <input type="hidden" name="total" value="{{ $total }}">
+                <button class="bg-[#4CAF50] text-white cursor-pointer rounded text-base transition-[background-color] duration-[0.3s] ease-[ease] px-2 py-2 border-[none] hover:bg-[#45a049]">Bayar</button>
+            </form>
+        </div>
+    </div>
     <x-footer></x-footer>
 </body>
+
 </html>

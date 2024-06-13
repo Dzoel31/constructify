@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Material;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\Cart;
+use App\Models\Order;
 
 class ShopController extends Controller
 {
@@ -64,6 +66,11 @@ class ShopController extends Controller
 
     public function history()
     {
+        $history = Order::where('ID_User', auth()->user()->id)->get();
+        return view('history', [
+            'title' => 'Order History',
+            'history' => $history,
+        ]);
         return view('history');
     }
 
@@ -75,7 +82,40 @@ class ShopController extends Controller
 
     public function payment()
     {
-        return view('payment');
+        $userCart = Cart::where('ID_User', auth()->user()->id)->get();
+        $total = Cart::where('ID_User', auth()->user()->id)->sum('total');
+        return view('payment', [
+            'userCart' => $userCart,
+            'total' => $total,
+        ]);
+    }
+
+    public function storePayment()
+    {
+        $user = auth()->user();
+        $data = request()->validate([
+            'total' => ['required', 'numeric'],
+        ]);
+        
+        $id_order = Str::uuid();
+
+        $cartData = Cart::where('ID_User', auth()->user()->id)->get();
+        foreach ($cartData as $cart) {
+            Order::create([
+                'id' => $id_order,
+                'ID_User' => $user->id,
+                'ID_Cart' => $cart->id,
+                'order_date' => now(),
+                'status' => 'Processing',
+                'total_price' => $data['total'],
+                'address' => $user->address,
+                'phone_number' => $user->phone_number,
+            ]);
+
+            Material::where('id', $cart->ID_Material)->decrement('stock', $cart->quantity);
+        }
+
+        return redirect()->route('shop')->with('success', 'Payment has been processed!');
     }
     
 }

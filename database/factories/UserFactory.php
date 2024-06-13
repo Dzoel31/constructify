@@ -28,6 +28,7 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => preg_replace('/@example\..*/', '@constructify.com', fake()->unique()->safeEmail),
             'role' => 'customer',
+            'address' => fake()->address(),
             'phone_number' => fake()->unique()->phoneNumber(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
