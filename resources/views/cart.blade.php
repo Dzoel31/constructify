@@ -57,7 +57,11 @@
             <h2 class="text-xl text-[#2e2222] m-0">Total: Rp {{ number_format($total) }}</h2>
             <form action="{{ route('payment') }}" method="GET">
                 @csrf
+                @if ($total == 0)
+                <button class="bg-[#4CAF50] text-white cursor-pointer rounded text-base transition-[background-color] duration-[0.3s] ease-[ease] px-2 py-2 border-[none] hover:bg-[#45a049]" disabled>Lanjutkan Pembayaran</button>
+                @else
                 <button class="bg-[#4CAF50] text-white cursor-pointer rounded text-base transition-[background-color] duration-[0.3s] ease-[ease] px-2 py-2 border-[none] hover:bg-[#45a049]">Lanjutkan Pembayaran</button>
+                @endif
             </form>
         </div>
     </div>
