@@ -1,44 +1,80 @@
-<nav class="flex justify-between items-center px-0 py-2.5" x-data="{ isOpen: false }">
-    <div class="text-[#4D869C] ml-5">
-        <a class="font-bold text-xl no-underline hover:text-[#4D869C]" href="/">Constructify</a>
-    </div>
-    <div>
-        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/">Home</a>
-        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/shop">Shop</a>
-        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:trasition[-0.3s]" href="/history">History</a>
-    </div>
-    <div class="flex items-center mr-5">
-        <a class="text-[#4D869C] no-underline text-xl px-5 py-0 hover:text-black hover:transition[-0.3s]" href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-        <div class="relative ml-3">
-            <div>
-                <button type="button" @click="isOpen = !isOpen" class="relative flex max-w-xs items-center rounded-full  text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 hover:text-[#4D869C]" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                    <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
-                    @if ( $user )
-                    <p class="text-xl"> {{ $user->name }}</p>
-                    @else
-                    <i class="text-2xl fa-solid fa-user-circle text-[#4D869C]"></i>
+<nav class="bg-white border-gray-200">
+    <div class="w-full  flex flex-wrap items-center justify-between p-2">
+        <a href="{{ route('landing') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <h1 class="text-2xl text-[#4D869C] font-bold">Constructify</h1>
+        </a>
+        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                <span class="sr-only">Open user menu</span>
+                <img class="w-8 h-8 rounded-full" src="../images/blank-user.jpg" alt="user photo">
+            </button>
+            <!-- Dropdown menu -->
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+                <div class="px-4 py-3">
+                    @if(auth()->user())
+                    <span class="block text-sm text-gray-900"> {{ $user->name }} </span>
+                    <span class="block text-sm  text-gray-500 truncate"> {{ $user->email }}</span>
                     @endif
-                </button>
+                </div>
+                <ul class="py-2" aria-labelledby="user-menu-button">
+                    @if(auth()->user() && auth()->user()->role === 'admin')
+                    <li>
+                        <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                    </li>
+                    @endif
+                    <li>
+                        <a href="{{ route('profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                    </li>
+                    @if( !$user)
+                    <li>
+                        <a href="{{ route('login') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign in</a>
+                    </li>
+                    @endif
+                    @if(auth()->check())
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                    @endif
+                </ul>
             </div>
-
-            <div x-show="isOpen" x-transition:enter="transition ease-out duration-100 transform" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                <a href="{{ route('profile') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                @if ( $user && $user->role == 'admin')
-                    <a href="/admin/dashboard" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Dashboard</a>
-                @endif
-
-                @if ( !$user )
-                <a href="/login" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Login</a>
-                @endif
-        
-                @if (auth()->check())
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="block px-4 py-2 text-sm text-gray-700">
-                        @csrf
-                        <button type="submit" role="menuitem" tabindex="-1" class="w-full text-left">Logout</button>
-                    </form>
-                @endif
-            </div>
+            <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+            <ul x-data="{ currentRoute: '{{ Route::currentRouteName() }}' }" class="flex flex-col font-medium md:p-0 border-gray-200 rounded-lg bg-white md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-80 dark:border-gray-700">
+                <li>
+                    <a href="{{ route('landing') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'landing', 'text-[#1a202c]': currentRoute !== 'landing' }" class="block py-2 px-3 text-[#1a202c] rounded hover:text-white md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700" aria-current="page">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('shop') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'shop', 'text-[#1a202c]': currentRoute !== 'shop' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
+                        Shop
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('history') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'history', 'text-[#1a202c]': currentRoute !== 'history' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
+                        History
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('cart') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'cart', 'text-[#1a202c]': currentRoute !== 'cart' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'contact', 'text-[#1a202c]': currentRoute !== 'contact' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
