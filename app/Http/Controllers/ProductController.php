@@ -73,24 +73,44 @@ class ProductController extends Controller
         ]);
     }
 
-    public function update($idProduct)
+    public function update(Request $request, $idProduct)
     {
-
-        $request = request();
+        $dataUpdate = $request->all();
         $data = Material::find($idProduct);
 
+        if ($request->hasFile('image')) {
+            dd($dataUpdate);
+            $imageName = time() . '.' . $request->image->extension();
+
+            $request->image->move(public_path('images'), $imageName);
+
+            if ($data->image) {
+                $image_path = public_path('images') . '/' . $data->image;
+                if (file_exists($image_path)) {
+                    unlink($image_path);
+                }
+            }
+
+
+            $dataUpdate['image'] = $imageName;
+        } else {
+            $dataUpdate['image'] = $data->image;
+        }
+
         $data->update([
-            'name' => $request->name,
-            'ID_category' => $request->ID_category,
-            'ID_partner' => $request->ID_partner,
-            'description' => $request->description,
-            'price' => $request->price,
-            'stock' => $request->stock,
-            'unit' => $request->unit,
+            'name' => $dataUpdate['name'],
+            'ID_category' => $dataUpdate['ID_category'],
+            'ID_partner' => $dataUpdate['ID_partner'],
+            'description' => $dataUpdate['description'],
+            'image' => $dataUpdate['image'],
+            'price' => $dataUpdate['price'],
+            'stock' => $dataUpdate['stock'],
+            'unit' => $dataUpdate['unit'],
         ]);
 
         return redirect()->route('admin.products')->with('success', 'Product has been updated successfully!');
     }
+
 
     public function destroy($idProduct)
     {

@@ -70,10 +70,17 @@ class ShopController extends Controller
     {
         $ID_User = auth()->user()->id;
 
-        $All_ID_Order = Order::where('ID_User', $ID_User)->get('id');
+        $All_ID_Order = Order::where('ID_User', $ID_User)->get()->sortByDesc('created_at');
+        // dd($All_ID_Order);
+        $All_ID_Order = $All_ID_Order->pluck('id');
+
 
         $Detail_Order = OrderDetail::whereIn('ID_Order', $All_ID_Order)->get();
 
+        $Detail_Order = $Detail_Order->sortBy(function ($orderDetail) use ($All_ID_Order) {
+            return array_search($orderDetail->ID_Order, $All_ID_Order->toArray());
+        });
+        
         return view('history', [
             'title' => 'History',
             'detailOrders' => $Detail_Order,

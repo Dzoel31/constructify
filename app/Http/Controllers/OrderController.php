@@ -12,13 +12,16 @@ class OrderController extends Controller
     public function orders()
     {
         $orderData = Order::all();
-        $ID_Order = Order::pluck('id');
+        // $ID_Order = Order::pluck('id');
+
+        // Sort the data by the latest order
+        $orderData = $orderData->sortByDesc('created_at');
 
     
         return view('admin.order', [
             'title' => 'Order',
             'orderData' => $orderData,
-            'ID_Order' => $ID_Order,
+            // 'ID_Order' => $ID_Order,
         ]);
     }
 

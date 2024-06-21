@@ -69,11 +69,6 @@
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </li>
-                <li>
-                    <a href="#" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'contact', 'text-[#1a202c]': currentRoute !== 'contact' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
