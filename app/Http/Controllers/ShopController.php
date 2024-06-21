@@ -109,6 +109,7 @@ class ShopController extends Controller
         $userCart = Cart::where('ID_User', auth()->user()->id)->get();
         $total = Cart::where('ID_User', auth()->user()->id)->sum('total');
         return view('payment', [
+            'title' => 'Payment',
             'userCart' => $userCart,
             'total' => $total,
         ]);
