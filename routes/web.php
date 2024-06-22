@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     
     Route::get('/admin/products/{idProduct}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
     Route::put('/admin/products/{idProduct}', [ProductController::class, 'update'])->name('admin.products.update');
-    Route::delete('/admin/products/{idProduct}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+    Route::delete('/admin/products/delete/{idProduct}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
     
     Route::get('/admin/orders', [OrderController::class, 'orders'])->name('admin.orders');
     Route::get('/admin/orders/{idOrder}', [OrderController::class, 'order'])->name('admin.order'); // in progress

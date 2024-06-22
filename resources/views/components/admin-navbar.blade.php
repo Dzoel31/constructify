@@ -50,17 +50,17 @@
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
             <ul x-data="{ currentRoute: '{{ Route::currentRouteName() }}' }" class="flex flex-col font-medium md:p-0 border-gray-200 rounded-lg bg-white md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-80 dark:border-gray-700">
                 <li>
-                    <a href="{{ route('admin.dashboard') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'landing', 'text-[#1a202c]': currentRoute !== 'landing' }" class="block py-2 px-3 text-[#1a202c] rounded hover:text-white md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700" aria-current="page">
+                    <a href="{{ route('admin.dashboard') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'admin.dashboard', 'text-[#1a202c]': currentRoute !== 'landing' }" class="block py-2 px-3 text-[#1a202c] rounded hover:text-white md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700" aria-current="page">
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.products') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'shop', 'text-[#1a202c]': currentRoute !== 'shop' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
+                    <a href="{{ route('admin.products') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'admin.products', 'text-[#1a202c]': currentRoute !== 'shop' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
                         Product
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.orders') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'history', 'text-[#1a202c]': currentRoute !== 'history' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
+                    <a href="{{ route('admin.orders') }}" :class="{ 'font-bold text-white bg-[#4D869C]': currentRoute === 'admin.orders', 'text-[#1a202c]': currentRoute !== 'history' }" class="block py-2 px-3 text-[#1a202c] rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-[#2b6cb0] md:p-0 dark:text-[#4D869C] md:dark:hover:text-white dark:hover:bg-[#4D869C] dark:hover:text-white dark:border-gray-700">
                         Order
                     </a>
                 </li>

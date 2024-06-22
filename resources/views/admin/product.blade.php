@@ -55,7 +55,7 @@
                             </button>
                         </div>
                         <!-- Modal body -->
-                        <form action="{{ route('admin.products.store') }}" class="p-4 md:p-5" method="POST">
+                        <form action="{{ route('admin.products.store') }}" class="p-4 md:p-5" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
@@ -164,7 +164,7 @@
                                             </button>
                                         </div>
                                         <!-- Modal body -->
-                                        <form action="/admin/products/{{ $product->id }}" class="p-4 md:p-5" method="POST">
+                                        <form action="{{ route('admin.products.update', ['idProduct' => $product->id]) }}" class="p-4 md:p-5" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <div class="grid gap-4 mb-4 grid-cols-2">
@@ -236,7 +236,7 @@
                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                             </svg>
                                             <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
-                                            <form action="/admin/products/{{ $product->id }}" method="POST" class="inline">
+                                            <form action="{{ route('admin.products.destroy', ['idProduct' => $product->id]) }}" method="POST" class="inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button data-modal-hide="popup-delete-{{ $product->id }}" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">

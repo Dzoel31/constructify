@@ -40,7 +40,7 @@ class ProductController extends Controller
         Material::create([
             'id' => $data['id'],
             'name' => $data['name'],
-'slug' => Str::slug($data['name']),
+            'slug' => Str::slug($data['name']),
             'ID_category' => $data['ID_category'],
             'ID_partner' => $data['ID_partner'],
             'image' => $data['image'],
@@ -56,7 +56,7 @@ class ProductController extends Controller
 
     public function show($idProduct)
     {
-                // show product
+        // show product
     }
 
     public function edit($idProduct)
@@ -77,28 +77,24 @@ class ProductController extends Controller
     {
         $dataUpdate = $request->all();
         $data = Material::find($idProduct);
-
+        
         if ($request->hasFile('image')) {
-            dd($dataUpdate);
             $imageName = time() . '.' . $request->image->extension();
-
             $request->image->move(public_path('images'), $imageName);
-
             if ($data->image) {
                 $image_path = public_path('images') . '/' . $data->image;
                 if (file_exists($image_path)) {
                     unlink($image_path);
                 }
-            }
-
-
-            $dataUpdate['image'] = $imageName;
-        } else {
+                $dataUpdate['image'] = $imageName;
+            } 
+        }else {
             $dataUpdate['image'] = $data->image;
         }
 
         $data->update([
             'name' => $dataUpdate['name'],
+            'slug' => Str::slug($dataUpdate['name']),
             'ID_category' => $dataUpdate['ID_category'],
             'ID_partner' => $dataUpdate['ID_partner'],
             'description' => $dataUpdate['description'],
@@ -114,7 +110,7 @@ class ProductController extends Controller
 
     public function destroy($idProduct)
     {
-// remove product image
+        // remove product image
         $data = Material::find($idProduct);
         $image_path = public_path('images') . '/' . $data->image;
         if (file_exists($image_path)) {
