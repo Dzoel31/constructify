@@ -40,7 +40,7 @@ class ProductController extends Controller
         Material::create([
             'id' => $data['id'],
             'name' => $data['name'],
-            'slug' => Str::slug($data['name']),
+'slug' => Str::slug($data['name']),
             'ID_category' => $data['ID_category'],
             'ID_partner' => $data['ID_partner'],
             'image' => $data['image'],
@@ -56,7 +56,7 @@ class ProductController extends Controller
 
     public function show($idProduct)
     {
-        // show product
+                // show product
     }
 
     public function edit($idProduct)
@@ -114,7 +114,7 @@ class ProductController extends Controller
 
     public function destroy($idProduct)
     {
-        // remove product image
+// remove product image
         $data = Material::find($idProduct);
         $image_path = public_path('images') . '/' . $data->image;
         if (file_exists($image_path)) {
