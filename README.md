@@ -108,9 +108,8 @@ To seed the database with sample data, run the following command:
 
 ## Contributors
 
-- [Muh. Alif Alfattah Riu]
-- [Dzulfikri Adjmal]
-- [Sudarma Yudho Prayitno]
+- [Dzulfikri Adjmal](https://github.com/dzoel31)
+- [Sudarma Yudho Prayitno](https://github.com/DharmaYudho)
 
 ## License
 
